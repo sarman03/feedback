@@ -1,7 +1,6 @@
 import mongoose, {Schema, Document} from "mongoose";
 
 
-
 export interface Message extends Document{
     content: string
     createdAt: Date
@@ -20,13 +19,13 @@ const MessageSchema: Schema<Message> = new Schema({
 })
 
 export interface User extends Document{
-    username: string,
-    password: string,
-    email: string,
-    verifyCode: string,
-    verifyCodeExpiry: Date,
-    isVerified: boolean,
-    isAcceptingMessage: boolean,
+    username: string;
+    password: string;
+    email: string;
+    verifyCode: string;
+    verifyCodeExpiry: Date;
+    isVerified: boolean;
+    isAcceptingMessage: boolean;
     messages: Message[]
 }
 
@@ -49,11 +48,11 @@ const UserSchema: Schema<User> = new Schema({
     },
     verifyCode: {
         type: String,
-        required: [true, "Code required"]
+        required: [true, " Verify Code required"]
     },
     verifyCodeExpiry: {
         type: Date,
-        required: [true, "Expiry required"]
+        required: [true, "Verify Code Expiry required"]
     },
     isVerified: {
         type: Boolean,
