@@ -40,6 +40,8 @@ export async function GET(request: Request){
         return Response.json({
             success: true,
             message: "Username available"
+        },{
+            status: 200
         })
     } catch (error) {
         console.log("Error checking username", error)
